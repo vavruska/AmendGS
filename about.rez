@@ -1,0 +1,20 @@
+
+#define MiscLibBaseID	$00100000
+#define mscAboutIcon	$00000001
+#define mscAboutString	MiscLibBaseID + $00000000
+#define mscByText	MiscLibBaseID + $00000002
+
+#include "miscLib.rez"
+
+
+resource rPString (mscAboutString, $0000) {
+       "   About AmendGS   "
+};
+
+#define LETXTBOX_00100002_CNT 17 /* move this line to the top of this file */
+
+resource rTextForLETextBox2 (mscByText, $0000) {
+       "by Chris Vavruska"
+};
+
+

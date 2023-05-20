@@ -1,0 +1,429 @@
+/*****************************************************************************\
+|*									     *|
+|*			     Miscellaneous Library			     *|
+|*									     *|
+|*			      by: Josef W. Wankerl			     *|
+|*									     *|
+|*				  Version: 1.1.1			     *|
+|*				    11/16/94				     *|
+|*									     *|
+\*****************************************************************************/
+
+#ifndef MiscLibBaseID
+#printf ("\nMiscLib.Rez error -\n  MiscLibBaseID has not been defined!\n")
+#define NoCompile
+#endif
+
+#ifndef mscAboutIcon
+#printf ("\nMiscLib.Rez error -\n  mscAboutIcon has not been defined!\n")
+#define NoCompile
+#endif
+
+#ifndef mscAboutString
+#printf ("\nMiscLib.Rez error -\n  mscAboutString has not been defined!\n")
+#define NoCompile
+#endif
+
+#ifndef mscByText
+#printf ("\nMiscLib.Rez error -\n  mscByText has not been defined!\n")
+#define NoCompile
+#endif
+
+#ifndef NoCompile
+
+// --- type $8001 defines
+
+// #define mscAboutIcon	MiscLibBaseID + $00000000
+
+// --- type $8003 defines
+
+#define mscAboutCtlList	MiscLibBaseID + $00000000
+
+// --- type $8004 defines
+
+#define mscIconCtl	MiscLibBaseID + $00000000
+#define mscAppVersionCtl MiscLibBaseID + $00000001
+#define mscSysVersionCtl MiscLibBaseID + $00000002
+#define mscByLineCtl	MiscLibBaseID + $00000003
+#define mscCopyrightCtl	MiscLibBaseID + $00000004
+#define mscTotalCtl	MiscLibBaseID + $00000005
+#define mscTotalKCtl	MiscLibBaseID + $00000006
+#define mscAvailableCtl	MiscLibBaseID + $00000007
+#define mscAvailableKCtl MiscLibBaseID + $00000008
+#define mscDividerCtl	MiscLibBaseID + $00000009
+#define mscApplicationCtl MiscLibBaseID + $0000000A
+#define mscApplicationKCtl MiscLibBaseID + $0000000B
+#define mscSystemCtl	MiscLibBaseID + $0000000C
+#define mscSystemKCtl	MiscLibBaseID + $0000000D
+#define mscDACtl	MiscLibBaseID + $0000000E
+#define mscDAKCtl	MiscLibBaseID + $0000000F
+#define mscSetupCtl	MiscLibBaseID + $00000010
+#define mscSetupKCtl	MiscLibBaseID + $00000011
+
+// --- type $8006 defines
+
+// #define mscAboutString	MiscLibBaseID + $00000000
+
+// --- type $800B defines
+
+#define mscAppVersionText MiscLibBaseID + $00000000
+#define mscSysVersionText MiscLibBaseID + $00000001
+// #define mscByText	MiscLibBaseID + $00000002
+#define mscCopyrightText MiscLibBaseID + $00000003
+#define mscTotalText	MiscLibBaseID + $00000004
+#define mscTotalKText	MiscLibBaseID + $00000005
+#define mscAvailableText MiscLibBaseID + $00000006
+#define mscAvailableKText MiscLibBaseID + $00000007
+#define mscApplicationText MiscLibBaseID + $00000008
+#define mscApplicationKText MiscLibBaseID + $00000009
+#define mscSystemText	MiscLibBaseID + $0000000A
+#define mscSystemKText	MiscLibBaseID + $0000000B
+#define mscDAText	MiscLibBaseID + $0000000C
+#define mscDAKText	MiscLibBaseID + $0000000D
+#define mscSetupText	MiscLibBaseID + $0000000E
+#define mscSetupKText	MiscLibBaseID + $0000000F
+
+// --- type $800E defines
+
+#define mscAboutWindow	MiscLibBaseID + $00000000
+
+// --- type $8010 defines
+
+#define mscAboutColor	MiscLibBaseID + $00000000
+
+#if !defined(_CustomAbout_)
+
+// --- Control List Definitions
+
+resource rControlList (mscAboutCtlList, $0000) {
+	{
+	mscSetupKCtl,		// control 1
+	mscSetupCtl,		// control 2
+	mscDAKCtl,		// control 3
+	mscDACtl,		// control 4
+	mscSystemKCtl,		// control 5
+	mscSystemCtl,		// control 6
+	mscApplicationKCtl,	// control 7
+	mscApplicationCtl,	// control 8
+	mscDividerCtl,		// control 9
+	mscAvailableKCtl,	// control 10
+	mscAvailableCtl,	// control 11
+	mscTotalKCtl,		// control 12
+	mscTotalCtl,		// control 13
+	mscCopyrightCtl,	// control 14
+	mscByLineCtl,		// control 15
+	mscSysVersionCtl,	// control 16
+	mscAppVersionCtl,	// control 17
+	mscIconCtl		// control 18
+	};
+};
+
+#endif
+
+// --- Control Templates
+
+resource rControlTemplate (mscIconCtl, $0000) {
+	$00000001,		// ID
+	{  4, 10, 29, 80},	// rect
+	iconButtonControl {{
+		$000C,		// flag
+		$1020,		// moreFlags
+		$00000000,	// refCon
+		mscAboutIcon,	// iconRef
+		0,		// titleRef
+		0,		// colorTableRef
+		$0000		// displayMode
+	}};
+};
+
+resource rControlTemplate (mscAppVersionCtl, $0000) {
+	$00000002,		// ID
+	{  5,100, 14,281},	// rect
+	statTextControl {{
+		$FF03,		// flag
+		$1002,		// moreFlags
+		$00000000,	// refCon
+		mscAppVersionText	// textRef
+	}};
+};
+
+resource rControlTemplate (mscSysVersionCtl, $0000) {
+	$00000003,		// ID
+	{ 16,100, 25,281},	// rect
+	statTextControl {{
+		$FF03,		// flag
+		$1002,		// moreFlags
+		$00000000,	// refCon
+		mscSysVersionText	// textRef
+	}};
+};
+
+resource rControlTemplate (mscByLineCtl, $0000) {
+	$00000004,		// ID
+	{  5,298, 14,591},	// rect
+	statTextControl {{
+		$FF00,		// flag
+		$1002,		// moreFlags
+		$00000000,	// refCon
+		mscByText	// textRef
+	}};
+};
+
+resource rControlTemplate (mscCopyrightCtl, $0000) {
+	$00000005,		// ID
+	{ 16,298, 25,591},	// rect
+	statTextControl {{
+		$FF03,		// flag
+		$1002,		// moreFlags
+		$00000000,	// refCon
+		mscCopyrightText	// textRef
+	}};
+};
+
+resource rControlTemplate (mscTotalCtl, $0000) {
+	$00000006,		// ID
+	{ 30, 10, 39,123},	// rect
+	statTextControl {{
+		$FF00,		// flag
+		$1002,		// moreFlags
+		$00000000,	// refCon
+		mscTotalText	// textRef
+	}};
+};
+
+resource rControlTemplate (mscTotalKCtl, $0000) {
+	$00000007,		// ID
+	{ 30,130, 39,211},	// rect
+	statTextControl {{
+		$FF03,		// flag
+		$1002,		// moreFlags
+		$00000000,	// refCon
+		mscTotalKText	// textRef
+	}};
+};
+
+resource rControlTemplate (mscAvailableCtl, $0000) {
+	$00000008,		// ID
+	{ 30,346, 39,493},	// rect
+	statTextControl {{
+		$FF00,		// flag
+		$1002,		// moreFlags
+		$00000000,	// refCon
+		mscAvailableText	// textRef
+	}};
+};
+
+resource rControlTemplate (mscAvailableKCtl, $0000) {
+	$00000009,		// ID
+	{ 30,500, 39,581},	// rect
+	statTextControl {{
+		$FF03,		// flag
+		$1002,		// moreFlags
+		$00000000,	// refCon
+		mscAvailableKText	// textRef
+	}};
+};
+
+resource rControlTemplate (mscDividerCtl, $0000) {
+	$0000000A,		// ID
+	{ 42,  0, 43,596},	// rect
+	rectangleControl {{
+		$FF02,		// flag
+		$1000,		// moreFlags
+		$00000000	// refCon
+	}};
+};
+
+resource rControlTemplate (mscApplicationCtl, $0000) {
+	$0000000B,		// ID
+	{ 45, 20, 54,129},	// rect
+	statTextControl {{
+		$FF03,		// flag
+		$1002,		// moreFlags
+		$00000000,	// refCon
+		mscApplicationText	// textRef
+	}};
+};
+
+resource rControlTemplate (mscApplicationKCtl, $0000) {
+	$0000000C,		// ID
+	{ 45,130, 54,211},	// rect
+	statTextControl {{
+		$FF03,		// flag
+		$1002,		// moreFlags
+		$00000000,	// refCon
+		mscApplicationKText	// textRef
+	}};
+};
+
+resource rControlTemplate (mscSystemCtl, $0000) {
+	$0000000D,		// ID
+	{ 56, 20, 65, 69},	// rect
+	statTextControl {{
+		$FF00,		// flag
+		$1002,		// moreFlags
+		$00000000,	// refCon
+		mscSystemText	// textRef
+	}};
+};
+
+resource rControlTemplate (mscSystemKCtl, $0000) {
+	$0000000E,		// ID
+	{ 56,130, 65,211},	// rect
+	statTextControl {{
+		$FF03,		// flag
+		$1002,		// moreFlags
+		$00000000,	// refCon
+		mscSystemKText	// textRef
+	}};
+};
+
+resource rControlTemplate (mscDACtl, $0000) {
+	$0000000F,		// ID
+	{ 45,356, 54,477},	// rect
+	statTextControl {{
+		$FF00,		// flag
+		$1002,		// moreFlags
+		$00000000,	// refCon
+		mscDAText	// textRef
+	}};
+};
+
+resource rControlTemplate (mscDAKCtl, $0000) {
+	$00000010,		// ID
+	{ 45,500, 54,581},	// rect
+	statTextControl {{
+		$FF03,		// flag
+		$1002,		// moreFlags
+		$00000000,	// refCon
+		mscDAKText	// textRef
+	}};
+};
+
+resource rControlTemplate (mscSetupCtl, $0000) {
+	$00000011,		// ID
+	{ 56,356, 65,437},	// rect
+	statTextControl {{
+		$FF00,		// flag
+		$1002,		// moreFlags
+		$00000000,	// refCon
+		mscSetupText	// textRef
+	}};
+};
+
+resource rControlTemplate (mscSetupKCtl, $0000) {
+	$00000012,		// ID
+	{ 56,500, 65,581},	// rect
+	statTextControl {{
+		$FF03,		// flag
+		$1002,		// moreFlags
+		$00000000,	// refCon
+		mscSetupKText	// textRef
+	}};
+};
+
+// --- rTextForLETextBox2 Templates
+
+resource rTextForLETextBox2 (mscAppVersionText, $0000) {
+	"*0 *1"
+};
+
+resource rTextForLETextBox2 (mscSysVersionText, $0000) {
+	"*2"
+};
+
+resource rTextForLETextBox2 (mscCopyrightText, $0000) {
+	"*3"
+};
+
+resource rTextForLETextBox2 (mscTotalText, $0000) {
+	TBStyleBold
+	"Total Memory:"
+};
+
+resource rTextForLETextBox2 (mscTotalKText, $0000) {
+	TBRightJust
+	"*4K"
+};
+
+resource rTextForLETextBox2 (mscAvailableText, $0000) {
+	TBStyleBold
+	"Available Memory:"
+};
+
+resource rTextForLETextBox2 (mscAvailableKText, $0000) {
+	TBRightJust
+	"*5K"
+};
+
+resource rTextForLETextBox2 (mscApplicationText, $0000) {
+	"*0"
+};
+
+resource rTextForLETextBox2 (mscApplicationKText, $0000) {
+	TBRightJust
+	"*6K"
+};
+
+resource rTextForLETextBox2 (mscSystemText, $0000) {
+	"System"
+};
+
+resource rTextForLETextBox2 (mscSystemKText, $0000) {
+	TBRightJust
+	"*7K"
+};
+
+resource rTextForLETextBox2 (mscDAText, $0000) {
+	"Desk Accessories"
+};
+
+resource rTextForLETextBox2 (mscDAKText, $0000) {
+	TBRightJust
+	"*8K"
+};
+
+resource rTextForLETextBox2 (mscSetupText, $0000) {
+	"Setup files"
+};
+
+resource rTextForLETextBox2 (mscSetupKText, $0000) {
+	TBRightJust
+	"*9K"
+};
+
+#if !defined(_CustomAbout_)
+
+// --- Window Templates
+
+resource rWindParam1 (mscAboutWindow, $0000) {
+	$C0A0,			// plFrame (frame bits)
+	mscAboutString,		// plTitle (title ID)
+	$00000000,		// plRefCon
+	{  0,  0,  0,  0},	// plZoomRect
+	mscAboutColor,		// plColorTable
+	{$0000, $0000},		// plYOrigin, plXOrigin
+	{$0000, $0000},		// plDataHeight, plDataWidth
+	{$0000, $0000},		// plMaxHeight, plMaxWidth
+	{$0000, $0000},		// plVerScroll, plHorScroll
+	{$0000, $0000},		// plVerPage, plHorPage
+	$00000000,		// plInfoText (info RefCon)
+	$0000,			// plInfoHeight
+	{ 40, 22,107,618},	// plPosition
+	infront,		// plPlane
+	mscAboutCtlList,	// plControlList
+	$0A09			// plInDesc
+};
+
+// --- Window Color Templates
+
+resource rWindColor (mscAboutColor, $0000) {
+	$0000,			// frameColor
+	$0F00,			// titleColor
+	$020F,			// tBarColor
+	$F0FF,			// growColor
+	$00F0			// infoColor
+};
+
+#endif
+#endif

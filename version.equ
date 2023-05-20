@@ -1,0 +1,8 @@
+#define MAJOR_VERSION 1
+#define MINOR_VERSION 0
+#define BUG_VERSION 0
+#define RELEASE_PHASE release
+#define REL_VER 0
+#define COPY_YEAR "2023"
+#define VERSION_STR "V1.0"
+
