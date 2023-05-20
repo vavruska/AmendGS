@@ -1,7 +1,7 @@
 #### AmendGS - A small revision control system for the Apple IIgs
 By Chris Vavruska
 
-![alt text](https://github.com/[vavruska]/[AmendGS]/blob/[main]/assets/amendgs.png?raw=true)
+![alt text](https://github.com/vavruska/AmendGS/blob/main/assets/amendgs.png?raw=true)
 
 AmendGS is a self-contained revision control system. It was originally going to be a port of Amend by Joshua Stein but I decided to add some additional functionality . For more information about Amend please visit the Amend web site at https://jcs.org/amend.
 
@@ -12,7 +12,7 @@ Each project handled by AmendGS is contained in a single "repo" database file. A
 
 Once a repo has been opened, the main browser interface of Amend is displayed:
 
-![alt text](https://github.com/[vavruska]/[AmendGS]/blob/[main]/assets/repo.png?raw=true)
+![alt text](https://github.com/vavruska/AmendGS/blob/main/assets/repo.png?raw=true)
 
 On the left are the list of files; each file being managed must be added through the Repo -> Add File menu option. In this dialog, files outside of the repository's directory and files that already exist in the repository are hidden.
 
@@ -38,7 +38,7 @@ Patching should now work. I would take care as it has not been extensively teste
 **2. Visualizations**
 Visualizations is a way of displaying the differences between two versions side by side instead of just viewing a diff file. The visualize code uses the fonts from Prizm (ORCA editor).
 
-![alt text](https://github.com/[vavruska]/[AmendGS]/blob/[main]/assets/commit.png?raw=true)
+![alt text](https://github.com/vavruska/AmendGS/blob/main/assets/commit.png?raw=true)
 
 **3. Support for the Undo Manager**
 All TextEdit controls support undo/redo if the Undo Manager is detected. See https://speccie.uk/software/undo-manager/ for more information on the Undo Manager
